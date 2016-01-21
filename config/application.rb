@@ -22,5 +22,16 @@ module InstagramClone
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.paperclip_defaults = {
+        storage: :fog,
+        fog_credentials: {
+            provider: 'AWS',
+            aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+            aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+            region: ENV['AWS_REGION'],
+            path_style: true
+        },
+        fog_directory: ENV['AWS_BUCKET'],
+    }
   end
 end
