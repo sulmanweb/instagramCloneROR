@@ -1,27 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container">
+  <%= link_to '<i class="fa fa-plus"></i>'.html_safe, new_post_path, class: "btn btn-danger btn-circle" %>
+  <div class="row">
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.description %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <div class="col-md-6 col-md-offset-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= post.user.username %><span class="small pull-right"><%= time_ago_in_words(post.created_at) %> ago</span> </h3>
+            </div>
+            <div class="panel-body">
+              <%= image_tag post.image(:original), alt: post.description.truncate(20), class: "img-responsive" %><br>
+              <p><strong><%= post.user.username %></strong> <%= post.description %></p>
+            </div>
+          </div>
+        </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+  </div>
+</div>

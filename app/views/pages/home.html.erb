@@ -1,2 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="row">
+    <% @posts.each do |post| %>
+        <div class="col-md-6 col-md-offset-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= post.user.username %><span class="small pull-right"><%= time_ago_in_words(post.created_at) %> ago</span> </h3>
+            </div>
+            <div class="panel-body">
+              <%= image_tag post.image(:original), alt: post.description.truncate(20), class: "img-responsive" %><br>
+              <p><strong><%= post.user.username %></strong> <%= post.description %></p>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
