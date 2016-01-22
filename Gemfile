@@ -27,6 +27,9 @@ gem 'fog', '~> 1.37'
 # for user authentication
 gem 'devise', '~> 3.5', '>= 3.5.4'
 
+# for pretty links
+gem 'friendly_id', '~> 5.1'
+
 group :development, :test do
   gem 'byebug'
 

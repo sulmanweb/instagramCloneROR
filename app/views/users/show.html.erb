@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-4">
+          <h1>
+            <%= @user.username %>
+            <% if user_signed_in? && current_user == @user %>
+              <span><%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_user_registration_path, class: "btn btn-primary btn-circle" %></span>
+            <% end %>
+          </h1>
+          <p><strong><%= @posts.count %></strong> posts</p>
+        </div>
+      </div>
+      <div class="row-massonary">
+        <% @posts.each do |post| %>
+          <div class="item-massonary">
+            <div class="well-massonary">
+              <%= link_to post_path(post) do %>
+                <%= image_tag post.image, alt: post.description.truncate(20), class: "img-responsive" %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -28,3 +28,22 @@
   line-height: 1.33;
   border-radius: 35px;
 }
+
+.row-massonary {
+  -moz-column-width: 18em;
+  -webkit-column-width: 18em;
+  -moz-column-gap: 1em;
+  -webkit-column-gap:1em;
+
+}
+
+.item-massonary {
+  display: inline-block;
+  padding:  .25rem;
+  width:  100%;
+}
+
+.well-massonary {
+  position:relative;
+  display: block;
+}

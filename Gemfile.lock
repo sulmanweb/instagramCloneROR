@@ -196,6 +196,8 @@ GEM
     font-awesome-rails (4.5.0.0)
       railties (>= 3.2, < 5.0)
     formatador (0.2.5)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -319,6 +321,7 @@ DEPENDENCIES
   dotenv-rails (~> 2.1)
   fog (~> 1.37)
   font-awesome-rails (~> 4.5)
+  friendly_id (~> 5.1)
   jbuilder (~> 2.0)
   jquery-rails
   letter_opener (~> 1.4, >= 1.4.1)
